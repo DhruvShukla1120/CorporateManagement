@@ -1,0 +1,87 @@
+<div class="signup-wrapper">
+  <div class="form-box">
+    <h2>Create an Account</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          [class.invalid]="submitted && f['email'].invalid"
+        />
+        <div *ngIf="submitted && f['email'].invalid" class="error">
+          <div *ngIf="f['email'].errors?.['required']">Email is required</div>
+          <div *ngIf="f['email'].errors?.['email']">Email must be valid</div>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          [class.invalid]="submitted && f['password'].invalid"
+        />
+        <div *ngIf="submitted && f['password'].invalid" class="error">
+          <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+          <div *ngIf="f['password'].errors?.['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+          [class.invalid]="
+            submitted &&
+            (f['confirmPassword'].invalid ||
+              signupForm.errors?.['passwordsMismatch'])
+          "
+        />
+        <div
+          *ngIf="
+            submitted &&
+            (f['confirmPassword'].invalid ||
+              signupForm.errors?.['passwordsMismatch'])
+          "
+          class="error"
+        >
+          <div *ngIf="f['confirmPassword'].errors?.['required']">
+            Confirm password is required
+          </div>
+          <div *ngIf="signupForm.errors?.['passwordsMismatch']">
+            Passwords do not match
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-group">
+        <button type="submit" [disabled]="loading">Sign Up</button>
+      </div>
+
+      <!-- Success & Error Messages -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+    </form>
+
+    <p>
+      Already have an account?
+      <a routerLink="/auth/login">Login</a>
+    </p>
+  </div>
+</div>

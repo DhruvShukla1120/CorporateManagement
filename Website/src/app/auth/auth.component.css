@@ -1,0 +1,132 @@
+:root {
+    --brand: #2563eb; /* blue-600 (change as needed) */
+    --brand-dark: #1d4ed8;
+    --brand-light: #60a5fa;
+    --danger: #e11d48;
+    --success: #10b981;
+  
+    --radius: 10px;
+    --shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    --font: 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+  }
+  
+  .auth-container {
+    max-width: 420px;
+    margin: 4rem auto;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    font-family: var(--font);
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: var(--brand-dark);
+    font-weight: 700;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .form-group input.invalid {
+    border-color: var(--danger);
+  }
+  
+  .form-group input:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand) 30%, transparent);
+    outline: none;
+  }
+  
+  .error {
+    color: var(--danger);
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--brand);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: var(--brand-dark);
+    transform: translateY(-1px);
+  }
+  
+  button:disabled {
+    background-color: var(--brand-light);
+    cursor: not-allowed;
+  }
+  
+  .error-message,
+  .success-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .error-message {
+    color: var(--danger);
+  }
+  
+  .success-message {
+    color: var(--success);
+  }
+  
+  .auth-container p {
+    margin-top: 1.75rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #374151;
+  }
+  
+  .auth-container a {
+    color: var(--brand-dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .auth-container a:hover {
+    color: var(--brand);
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 480px) {
+    .auth-container {
+      margin: 2rem 1rem;
+      padding: 2rem 1.5rem;
+    }
+  }
+  

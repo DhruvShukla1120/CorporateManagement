@@ -1,0 +1,101 @@
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.visual {
+  flex: 1;
+  background: url('https://heropatterns.com/static/media/graph-paper.0efc8e7f.svg');
+  background-color: #1e272e;
+  background-size: auto;
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.illustration {
+  max-width: 80%;
+  height: auto;
+}
+
+
+.form-container {
+  flex: 1;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input.invalid {
+  border-color: #e74c3c;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #5465e7;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #4035df;
+}
+
+.error-message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #e74c3c;
+}
+
+p {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+a {
+  color: #5465e7;
+  font-weight: bold;
+  text-decoration: none;
+}
